@@ -9,8 +9,9 @@ function Home() {
       <NavBar />
       <main>
         <h2>Welcome to Campus Talents Movies!</h2>
+        <Outlet />
       </main>
-      <Outlet />
+
       <Footer />
     </>
   );

@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { actors } from "./data/actors";
 
-export default function Actors() {
+export function Actors() {
   const { actorId } = useParams();
   console.log(actorId);
 
