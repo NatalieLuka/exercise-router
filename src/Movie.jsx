@@ -1,16 +1,18 @@
 import { movies } from "./data/movies";
-import { useParams } from "react-router-dom";
 
 export function Movies() {
-  const { movieId } = useParams();
-  console.log(movieId);
-
-  //   const movie = movies.find((movie) => movie.id == movieId);
-
   return (
-    <>
-      <h1>Movies</h1>
-      {/* {movie?.title} */}
-    </>
+    <div>
+      <h3>Movies</h3>
+      <ul>
+        {movies.map((movie) => (
+          <li key={movie.id}>
+            <h2>{movie.title}</h2>
+            <p>{movie.tagline}</p>
+            <img src={movie.thumbnail} alt={movie.title} />
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

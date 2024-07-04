@@ -1,16 +1,18 @@
-import { useParams } from "react-router-dom";
 import { actors } from "./data/actors";
 
 export function Actors() {
-  const { actorId } = useParams();
-  console.log(actorId);
-
-  const actor = actors.find((actor) => actor.id == actorId);
-
   return (
-    <>
-      <h1>Actors</h1>
-      {actor?.name}
-    </>
+    <div>
+      <h3>Movies</h3>
+      <ul>
+        {actors.map((actor) => (
+          <li key={actor.id}>
+            <h2>{actor.name}</h2>
+            <p>{actor.character}</p>
+            <img src={actor.image} alt={actor.name} />
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
